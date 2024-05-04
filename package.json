@@ -35,7 +35,7 @@
     "test:client": "react-scripts test",
     "eject:client": "react-scripts eject",
     "cleanup": "rm -rf build/api",
-    "postbuild": "react-snap"
+    "postbuild": "react-snap; npm run cleanup"
   },
   "eslintConfig": {
     "extends": [
