@@ -3,9 +3,10 @@ import dotenv from 'dotenv'
 dotenv.config()
 
 export const {
-  NODE_ENV = "PRODUCTION",
-  port = 8000
-} = process.env;
+  NODE_ENV = "prod",
+  port = 3000
+} = process.env
 
-export const PRODUCTION = NODE_ENV == "PRODUCTION";
-export const PORT = port;
+export const ISPRODUCTION = NODE_ENV === "prod"
+export const PORT = port
+export const CLIENT_BUILD_PATH = `${__dirname}/../../build`
