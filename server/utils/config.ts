@@ -3,7 +3,7 @@ import dotenv from 'dotenv'
 dotenv.config()
 
 export const {
-  NODE_ENV = "prod",
+  NODE_ENV = "dev",
   port = 3000
 } = process.env
 

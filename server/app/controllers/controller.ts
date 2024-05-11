@@ -1,12 +1,17 @@
-import { Request, Response } from "express";
+import { Request, Response } from "express"
+import Http, { HttpResponse } from "../helpers/Http"
+import HttpError from "../helpers/HttpError"
 
-export const getUsers = (req: Request, res: Response) => {
+export default class Controller {
+  protected send<T>(res: Response, data: HttpResponse<T>): Response {
+    return Http.send(res, data)
+  }
 
-  // Lógica para obtener usuarios (por ejemplo, desde una base de datos)
-  const users = [
-    { id: 1, name: 'Alice' },
-    { id: 2, name: 'Bob' },
-  ];
+  protected setError(code: number, msg: string) {
+    throw new HttpError(code, msg)
+  }
 
-  res.status(200).json(users)
+  protected handleError(req: Request, res: Response, error: Error): Response {
+    return HttpError.handle(req, res, error)
+  }
 }

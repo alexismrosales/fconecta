@@ -3,7 +3,7 @@ import Router from "./routes";
 import { PORT } from "./utils/config";
 import Cors from './utils/cors'
 export default class Server {
-  private application: Application;
+  private application: Application
   private port: number | string
 
   constructor() {
