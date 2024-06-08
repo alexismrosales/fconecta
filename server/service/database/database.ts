@@ -47,4 +47,4 @@ class Database {
     return resultSet.recordset
   }
 }
-export default new Database()
+export default Database
