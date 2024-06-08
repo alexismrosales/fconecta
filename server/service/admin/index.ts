@@ -1,10 +1,10 @@
 import { User } from "../../utils/user"
 import { BinaryLike, createHash } from "crypto"
-import Jwt from "jsonwebtoken"
-import database from "../database/database"
+import Database from "../database/database"
 
 class AdminService {
   public async verifyCredentials(user: User) {
+    const database = new Database()
     // Converting password into hash
     var password: BinaryLike = ''
     var logued: boolean = false
@@ -29,9 +29,7 @@ class AdminService {
     } catch (err) {
       throw new Error(String(err))
     }
-
     return logued
-
   }
 }
 export default new AdminService()
