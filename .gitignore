@@ -26,3 +26,5 @@ yarn-error.log*
 /server/service/database/credentials.ts
 
 /server/utils/jwt.ts
+
+.env.apps
