@@ -1,3 +1,4 @@
 export interface AreaCardData {
-  title: string
+  title: JSX.Element
+  link: string
 }
